@@ -1,0 +1,288 @@
+@charset "utf-8";
+
+*, *:before, *:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/*general reset*/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+*:focus {
+	outline:0;
+}
+body, html {
+	height:100%;
+	width:100%;
+	min-height:400px;
+	min-width: 320px;
+	background-color:#fff;
+	color: #343434;
+}
+#wrapper {
+	height:100%;	
+	min-width:320px;
+	min-height: 400px;
+}
+section {
+	width: 100%;
+	overflow: auto;
+}
+img {
+	display: block;
+}
+
+/* float and clear */
+/**************************/
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+.clear {
+	clear: both;
+}
+
+/* Typography */
+/**************************/
+
+body,td,th, h1, h2, h3, h4, h5, p  {
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
+	font-size: 100%;
+}
+h1, h2, h3, h4, h5 {
+	margin-bottom: 20px;
+}
+#wrapper h1 {
+	font-size: 2em;
+	font-weight: 300;
+	text-transform: uppercase;
+}
+#wrapper h2 {
+	font-size: 1.5em;
+	font-weight: 300;
+	text-transform: uppercase;
+}
+#wrapper h3 {
+	font-size: 1.125em;
+	font-weight: 300;
+	text-transform: uppercase;
+}
+#wrapper p {
+	font-size: 1em;
+}
+p {
+	margin-bottom: 1em;
+}
+strong {
+	display: inline-block;
+	font-family: 'Lato', sans-serif;
+	font-weight: 700;
+	font-style: none;
+}
+em {
+	font-family: 'Lato', sans-serif;
+	font-weight: 700;
+	font-style: normal;
+}
+a {
+	-webkit-transition-duration: .25s;
+	-moz-transition-duration: .25s;
+	-ms-transition-duration: .25s;
+	-o-transition-duration: .25s;
+	transition-duration: .25s;
+	text-decoration: none;
+	cursor:pointer;
+	cursor:hand; 
+	color: inherit;
+}
+a:hover {
+	color:#f47c20;	
+	text-decoration:none;
+}
+.button {
+	display: block;
+	border: 1px solid #343434;
+	padding: 1em;
+	margin: 0 auto;
+	text-align: center;
+	color:#343434;
+	text-decoration: none;
+	font-weight: 500;
+	background: rgba(255,255,255,.5);
+	border-radius: 25px;
+}
+.button:hover {
+	background: rgba(255,255,255,1);
+}
+ul {
+    list-style-position: inside;
+    margin-bottom: 30px;
+}
+ul.credits {
+	display: block;
+	width: 100%;
+	text-align: center;
+}
+#credits h1, #credits h2 {
+	display: block;
+	width: 100%;
+	text-align: center;
+}
+ul.credits li {
+	display: inline-block;
+	margin: 0 30px;
+}
+
+/* Colours */
+/**************************/
+.cbrain-blue-bg {
+	background-color: #05a3d6;
+}
+
+/* Section styles */
+/**************************/
+
+#wrapper {
+	overflow: auto;
+	height: auto;
+	width: 100%;
+	background-color: #fff;
+}
+section.content {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	height: 100%;
+}
+
+/* Header and Nac */
+/**************************/
+
+header {
+	width: 100%;
+	padding: 0 1em;
+	height: 60px;
+}
+
+nav {
+	height:100%;
+	width:80%;
+	float:right;
+	font-size:1.1em;
+	text-align: right;
+	position: relative;	
+}
+nav a {
+	color:#343434;
+	text-decoration:none;
+}
+nav a:hover {
+}
+nav ul {
+	display: block;
+	width: 100%;
+	list-style: none;
+}
+nav ul li {
+	display: inline-block;
+}
+nav ul li.first {
+	margin-left: 0;
+}
+#main-nav {
+	margin-bottom: 0;
+}
+#main-nav li a {
+    display: block;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 60px;
+    padding: 0 15px;
+    height: 60px;
+}
+#main-nav .active, #main-nav li a:hover  {
+	border-bottom: 9px solid #f47c20;
+}
+#menu {
+	display: none;
+}
+.slicknav_menu {
+  display: none;
+  float: right;
+  padding: 0;
+  margin: 0;
+  z-index: 20000;
+  background: none;
+  position: fixed;
+  top:10px;
+  right:0;
+  width:175px;
+  text-align: left;
+}
+.slicknav_menu ul {
+	background: #222;
+	padding: 20px 0;
+	border-radius: 10px;
+}
+.slicknav_menu li {
+	font-size: 1.125em;
+	font-weight: 200;
+}
+.slicknav_menu a.menu-fx {
+	color: #fff;
+	border-radius: 4px;
+}
+.slicknav_menu a.active {
+	background-color: #fff;
+	border-radius: 4px;
+	color: #f47c20;
+}
+.slicknav_menu a.menu-fx:hover {
+	color: #f47c20;
+	background: #fff;
+}
+
+.slicknav_menu li:last-child {
+}
+.slicknav_btn {
+}
+.slicknav_icon-bar {
+}
+
+/* Burger Time*/
+@media screen and (max-width: 1000px) {
+	.slicknav_menu {
+		display: inline-block;
+	}
+	#main-nav {
+		display: none;
+	}
+}
+
+.logodiv {
+	display:block;
+	height: 60px;
+	width: 20%;
+	float:left;
+}
+.logodiv img {
+	height: 60px;
+	padding: 10px 0;	
+	width: auto;
+}
+
+/* Header and Nac */
+/**************************/
+
+footer {
+	border-top: 9px solid #05a3d6;
+}
