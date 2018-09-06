@@ -53,19 +53,76 @@
       </section>
     </header>
 
-    <section class="content">
-    body content
-      
+<!-- Main body content -->
+    <section>
+      <div class="content">
+        <div class="single-column">
+          <div class="div-logo">
+            <img src="images/cbrain-logo.png">
+          </div>  
+          <p class="intro-p">CBRAIN is an infrastructure that connects researchers from all walks of science and their data to high performance and cloud computing in a easy to manage, reproducible, and user-friendly manner.  CBRAIN focuses on:</p>
+          <!-- 3 icons -->
+          <div class="icon-holder">
+            <div class="icon-box">
+              <div class="icon blue-bar">
+                <img src="images/icon-access.png">
+              </div>
+              <h2>Accessibility</h2>
+              <p>Ability to work across multiple machines and filesystems.</p>
+            </div>
+            <div class="icon-box">
+              <div class="icon">
+                <img src="images/icon-efficiency.png">
+              </div>
+              <h2>Efficiency</h2>
+              <p>Quickly moving compute and data behind the scenes.</p>
+            </div>
+            <div class="icon-box">
+              <div class="icon">
+                <img src="images/icon-repro.png">
+              </div>
+              <h2>Reproducibility</h2>
+              <p>Strict standards and pipelines allow for reproducible results.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-    
+
+    <section class="grey">
+        <div class="content">
+          <div class="single-column">
+            <div class="icon-alone">
+              <img src="images/icon-user.png">
+            </div> 
+            <p class="intro-p">Anyone can use CBRAIN by signing up for an account on our publicly available portal, or download the source hosted at Github to deploy CBRAIN for yourself.</p>
+            <!-- 2 icons -->
+            <div class="two-column-holder">
+              <div class="icon-box-two">
+                <div class="icon-two">
+                  <img src="images/cbrain-icon-blue.png">
+                </div>
+                <a href="https://portal.cbrain.mcgill.ca/login" class="button">Try Demo</a>
+              </div>
+              <div class="icon-box-two">
+                <div class="icon-two">
+                  <img src="images/icon-github.png">
+                </div>
+                <a href="" class="button">Download</a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>    
     <footer>
       <section class="content">
-        <h3>Partners </h3>
-        <div class="clear"></div>
-        <a href="https://www.mcgill.ca/" target="_blank"><img src="images/logo-mcgill.png" alt="McGill Logo"></a>
-        <a href="http://www.mcgill.ca/neuro/" target="_blank"><img src="images/logo-neuro.png" alt="Neuro Logo"></a>
-        <a href="http://mcin-cnim.ca/" target="_blank"><img src="images/logo-mcin.png" alt="MCIN Logo"></a>
-        <a href="http://ludmercentre.ca/" target="_blank"><img src="images/logo-ludmer.png" alt="Ludmer Centre Logo"></a>
+        <h3>Partners with:</h3>
+        <div class="flex">
+          <a href="https://www.mcgill.ca/" target="_blank"><img src="images/logo-mcgill.png" alt="McGill Logo"></a>
+          <a href="http://mcin.ca/" target="_blank"><img src="images/logo-mcin.png" alt="MCIN Logo"></a>
+          <a href="http://www.mcgill.ca/neuro/" target="_blank"><img src="images/logo-neuro.png" alt="Neuro Logo"></a>
+          <a href="http://ludmercentre.ca/" target="_blank"><img src="images/logo-ludmer.png" alt="Ludmer Centre Logo"></a>
+        </div>
       </section>
       
     </footer>
@@ -75,14 +132,6 @@
     <script type="text/javascript">
       $(document).ready(function(){
         $('#menu').slicknav({label:''});
-      });
-      $(window).scroll(function() {
-        if ($(this).scrollTop() > 1){  
-            $('#top').addClass("mini");
-        }
-        else{
-            $('#top').removeClass("mini");
-        }
       });
       $(function() {
         $('.divheight').matchHeight({
