@@ -31,7 +31,7 @@ body, html {
 }
 section {
 	width: 100%;
-	overflow: auto;
+	/*overflow: auto;*/
 }
 img {
 	display: block;
@@ -147,7 +147,10 @@ ul.credits li {
 	display: inline-block;
 	margin: 0 30px;
 }
-
+.title-center {
+	width: 100%;
+	text-align: center;
+}
 /* Colours */
 /**************************/
 .cbrain-blue-bg {
@@ -357,7 +360,7 @@ nav ul li.first {
 	margin-left: 30px;
 	width: calc(66.66% - 30px);
 }
-.blue-bar
+.blue-bar, .blue-bar-horizontal, .blue-bar-horizontal-reverse
 {
     position: relative;
 }
@@ -373,40 +376,16 @@ nav ul li.first {
     top: 0;    
     z-index: 1;
 }
+.icon-horizontal {
 
-@media screen and (min-width: 800px) {
-	.icon-holder {
-		display: flex;
-	}
-	.icon-box {
-		width: 33.33%;
-		clear: none;
-	}
-	.icon-box h2 {
-	    text-align: center;
-	    width: 100%;
-	    margin-left: 0;
-	}
-	.icon {
-		padding-bottom: 20px;
-		width: 100%;
-		height: auto;
-		float: none;
-	}
-	.icon-box p {
-		float: none;
-		margin-left: 0;
-    	width: 100%;
-	}
-	.blue-bar:after
-	{
-		width: 300%;
-	    height: 10px;
-	    min-height: 10px;
-	    left: 0;
-	    top: calc(50% - 5px);
-	    
-	}
+}
+.icon-horizontal img {
+	position: relative;
+	z-index: 2;
+	margin: 0 auto 30px;
+}
+.details-horizontal {
+	
 }
 .two-column-holder {
 	display: flex;
@@ -414,6 +393,11 @@ nav ul li.first {
     width: 100%;
     max-width: 500px;
     margin: 0 auto 50px;
+}
+.features-holder {
+	display: block;
+	width: 100%;
+	margin: 0 auto 100px;
 }
 .icon-alone {
 	width:33.33%;
@@ -438,7 +422,76 @@ nav ul li.first {
 .icon-box-two:last-of-type {
 	float: right;
 }
-
+@media screen and (min-width: 800px) {
+	.icon-holder {
+		display: flex;
+	}
+	.icon-box {
+		width: 33.33%;
+		clear: none;
+	}
+	.icon-box h2 {
+	    text-align: center;
+	    width: 100%;
+	    margin-left: 0;
+	}
+	.icon {
+		padding-bottom: 20px;
+		width: 100%;
+		height: auto;
+		float: none;
+	}
+	.icon-box p {
+		float: none;
+		margin-left: 0;
+    	width: 100%;
+	}
+	.icon-horizontal {
+		float: left;
+		width: 158px;
+	}
+	.features-holder {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		margin: 0 auto 100px;
+	}
+	.details-horizontal {
+		margin-left: 50px;
+		width: calc(100% - 208px);
+		float: right;
+	}
+	.blue-bar:after
+	{
+		width: 300%;
+	    height: 10px;
+	    min-height: 10px;
+	    left: 0;
+	    top: calc(50% - 10px);
+	    
+	}
+		.blue-bar-horizontal:after {
+		content: "";
+	    background-color: #05a3d6;
+	    position: absolute;
+		width: 10px;
+	    height: 300%;
+	    min-height: 300px;
+	    left: calc(50% - 5px);
+	    top: 2px;    
+	    z-index: 1;
+	}
+	.blue-bar-horizontal-reverse:after {
+		content: "";
+	    background-color: #05a3d6;
+	    position: absolute;
+		width: 10px;
+	    height: 350px;
+	    left: calc(50% - 5px);
+	    top: -275px;    
+	    z-index: 1;	
+	}
+}
 /* Footer */
 /**************************/
 
