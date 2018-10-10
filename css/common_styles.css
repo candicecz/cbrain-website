@@ -75,6 +75,11 @@ h1, h2, h3, h4, h5 {
 	font-weight: 700;
 	text-transform: uppercase;
 }
+#wrapper h4 {
+	font-size: 1.125em;
+	font-weight: 500;
+	text-transform: none;
+}
 #wrapper p {
 	font-size: 1em;
 }
@@ -352,6 +357,11 @@ nav ul li.first {
 	width: 33.33%;
 	float: left;
 }
+@media screen and (min-width: 800px){
+	.icon {
+		margin-bottom: 15px;
+	}
+}
 .icon img {
 	width: 100%;
 	height: auto;
@@ -375,7 +385,7 @@ nav ul li.first {
     height: 300%;
     min-height: 300px;
     left: calc(50% - 5px);
-    top: 0;    
+    top: 1px;    
     z-index: 1;
 }
 .two-column-holder {
@@ -610,6 +620,173 @@ nav ul li.first {
 	.project-page-button {
 		font-size: 0.9em;
 	}
+}
+
+/* Get Started Page/*
+/**************************/
+
+.gs-page-align {
+	position: relative;
+}
+.icon-box h4 {
+    font-size: 1em !important;
+    text-align: left;
+    float: left;
+    margin-left: 30px;
+    margin-bottom: 15px;
+    width: calc(66.66% - 30px);
+}
+.gs-page-align .icon-box a {
+	position: relative;
+	float: left;
+	margin-left: 30px;
+	width: auto;
+}
+@media screen and (min-width: 800px) {
+	.icon-box h4 {
+		margin: 0 0 15px;
+		float: none;
+		text-align: center;
+		width: 100%;
+	}
+	.gs-page-align .icon-box {
+		position: relative;
+		padding-bottom: 52px;
+		margin: 0 0 50px;
+	}
+	.gs-page-align .icon-box a {
+		position: absolute;
+		bottom: 0;
+		left: 30px;
+		width: calc(100% - 60px);
+		margin: 0;
+	}
+}
+
+/* Support Page/*
+/**************************/
+.QA-list {
+	list-style-type: none;
+	margin-bottom: 50px;
+}
+.QA-list li {
+	display: block;
+	float: left;
+	clear: both;
+	margin-bottom: 50px;
+	font-size: 1.5em
+}
+.QA-list li:nth-child(odd):before {
+    content: "Q:";
+    display: block;
+    float: left;
+    margin-right: 15px;
+    line-height: .75em;
+    font-size: 2.5em;
+    color: #00a3d7;
+    font-weight: 700;
+}
+.QA-list li:nth-child(even):before {
+    content: "A:";
+    display: block;
+    float: left;
+    margin-right: 15px;
+    line-height: .75em;
+    font-size: 3em;
+    color: #f68b1f;
+    font-weight: 700;
+}
+
+/* About Page */
+/**************************/
+.about-text-holder {
+	margin-bottom: 100px;
+}
+.small-icon-left {
+	width: 80px;
+	margin: 0 auto 15px;
+}
+.small-icon-left img {
+    width: 100%;
+}
+.about-text {
+	display: block;
+	width: 100%;
+	margin-bottom: 50px;
+}
+.about-text-holder a {
+    margin: 0 auto;
+}
+.team-card-holder {
+	margin-bottom: 50px;
+}
+.team-card {
+	border: 1px solid #05a3d6;
+    padding: 1em;
+    background: #fff;
+    border-radius: 25px;
+    margin-bottom: 50px;
+}
+.team-card-pic {
+    border-radius: 75px;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    margin: 0 auto 15px;
+}
+.team-card-pic img {
+	width: 100%;
+	height: auto;
+}
+.team-name {
+	margin-bottom: 15px;
+}
+@media screen and (min-width: 640px) {
+	.about-text-holder {
+		clear: both;
+	}
+	.about-text-holder a{
+		float: right;
+	}
+	.team-card-holder {
+		display: flex;
+		flex-flow: row wrap;
+	}
+	.team-card {
+		position: relative;
+		padding-bottom: calc(50px + 1.5em);
+	}
+	.team-card a.button {
+		position: absolute;
+		bottom: 1em;
+		width: calc(100% - 2em);
+	}
+	.small-icon-left {
+		float: left;
+	}
+	.about-text {
+		float: left;
+		width: calc(100% - 80px);
+		padding-left: 15px;
+	}
+	.team-card {
+	    width: 45%;
+	    margin: 2.5%;
+	    float: left;
+	}
+}
+@media screen and (min-width: 800px) {
+	.team-card {
+	    width: 31%;
+	    margin: 1%;
+	    float: left;
+	}
+}
+.team-detail-small {
+	width: calc(33% - 10px);
+}
+.team-detail-large {
+	width: calc(66% - 10px);
 }
 /* Footer */
 /**************************/
