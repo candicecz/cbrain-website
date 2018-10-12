@@ -718,7 +718,10 @@ nav ul li.first {
     margin: 0 auto;
 }
 .team-card-holder {
-	margin-bottom: 50px;
+	margin-bottom: 100px;
+}
+.team-name {
+	font-size: 1.125em !important;
 }
 .team-card {
 	border: 1px solid #05a3d6;
