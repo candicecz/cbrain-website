@@ -824,3 +824,10 @@ footer a img {
 		max-height: 40px;
 	}
 }
+section .content p a {
+	text-decoration: underline;
+	font-weight: 600;
+}
+section .content h2 a {
+	text-decoration: underline;
+}
