@@ -1,0 +1,185 @@
+@import "../base";
+
+/*
+=============================================================
+| HOME
+=============================================================
+*/
+
+$HOME-CBRAIN-LOGO: 15;
+$HOME-ANIMATION: 12.5;
+
+.home {
+  width: 100%;
+  .banner {
+    width: 100%;
+    display: flex;
+    background-color: $COLOR-AQUA-ISLAND;
+    .banner-content {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: $MARGIN - $PADDING + rem 0;
+      .banner-description {
+        display: flex;
+        flex: 1 1 45%;
+        flex-direction: column;
+        padding: $PADDING + rem $PADDING * 1.5 + rem;
+        background-image: linear-gradient(
+          to right,
+          #a7d4dd 90%,
+          rgba(167, 212, 221, 0.1)
+        );
+        z-index: 2;
+        .banner-description-logo {
+          width: $HOME-CBRAIN-LOGO + rem;
+          height: 100%;
+        }
+        .banner-description-paragraph {
+          @extend .text-banner;
+          padding: $PADDING / 2 + rem;
+          padding-left: 0;
+        }
+        .banner-description-button {
+          @extend .button-filled, .text-button;
+        }
+      }
+      .banner-img {
+        height: 100%;
+        position: relative;
+        flex: 0 0 45%;
+        .banner-img-pipelines {
+          height: 100%;
+          position: absolute;
+          right: 0;
+          padding: $PADDING + rem 0;
+        }
+      }
+    }
+  }
+  .icons {
+    display: flex;
+    .icon {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: $PADDING + rem;
+      .icon-text {
+        @extend .text;
+        width: 100%;
+        text-align: center;
+        .icon-text-subtitle {
+          @extend .text-subtitle;
+        }
+      }
+      .animation {
+        width: $HOME-ANIMATION + rem;
+        height: $HOME-ANIMATION + rem;
+      }
+    }
+  }
+  .learn-more {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: $MARGIN / 2 + rem auto;
+  }
+  @include breakpoint(desktop_large) {
+    .banner {
+      .banner-content {
+        padding: 0;
+        .banner-description {
+          padding: $MARGIN + rem 5%;
+          .banner-description-paragraph {
+            padding: $PADDING + rem $PADDING * 2 + rem;
+            padding-left: 0;
+          }
+        }
+        .banner-img {
+          .banner-img-pipelines {
+            padding: 2rem 0;
+          }
+        }
+      }
+    }
+  }
+  @include breakpoint(tablet) {
+    .banner {
+      width: 100%;
+      padding: 0;
+      .banner-content {
+        width: 100%;
+        flex-direction: column-reverse;
+        justify-content: space-around;
+        overflow: hidden;
+        margin: 0;
+        padding-bottom: $PADDING-TABLET + rem;
+        .banner-description {
+          flex: unset;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: center;
+          padding: 0 $PADDING-TABLET + rem;
+          text-align: center;
+          .banner-description-logo {
+            width: auto;
+            height: auto;
+          }
+          .banner-description-paragraph {
+            padding: $PADDING-TABLET + rem;
+          }
+          .banner-description-button {
+            align-self: center;
+          }
+        }
+        .banner-img {
+          height: 50%;
+          .banner-img-gradient {
+            display: none;
+          }
+          .banner-img-pipelines {
+            position: unset;
+            padding: 0;
+            padding-top: $PADDING-TABLET / 2 + rem;
+          }
+        }
+      }
+    }
+    .icons {
+      flex-wrap: wrap;
+      margin: 0;
+      .icon {
+        width: 100%;
+        padding: $PADDING-TABLET + rem;
+      }
+    }
+  }
+  @include breakpoint(mobile) {
+    .banner {
+      .banner-content {
+        margin: $MARGIN-MOBILE + rem 0;
+        padding: 0;
+        .banner-description {
+          margin: 0;
+          background-image: none;
+          padding: 0;
+          .banner-description-paragraph {
+            padding-left: $PADDING-MOBILE + rem;
+            padding-right: $PADDING-MOBILE + rem;
+          }
+        }
+        .banner-img {
+          display: none;
+        }
+      }
+    }
+    .icons {
+      .icon {
+        margin: $PADDING-MOBILE + rem 0;
+        padding: 0 $PADDING-MOBILE + rem;
+      }
+    }
+  }
+}

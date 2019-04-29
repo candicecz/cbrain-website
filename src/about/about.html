@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <meta content="utf-8" http-equiv="encoding" />
+    <meta name="viewport" content="width = device-width, initial-scale = 1" />
+    <title>CBRAIN | About</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="./assets/icons/icon-cbrain-thumbnail.png"
+    />
+  </head>
+
+  <body>
+    <%= require('html-loader!../partials/nav.html') %>
+    <div class="about">
+      <section class="about-team">
+        <div class="team-heading">
+          About Us
+          <div class="team-description">Since 2009, the CBRAIN team has included software developers, systems engineers, and research scientists 
+	    dedicated to building infrastructure to democratize computing and remove the
+	    barriers that exist in accomplishing large-scale science. CBRAIN is housed within the
+	    <a href="http://mcin.ca">McGill Centre for Integrated Neuroscience</a> at McGill University.
+	  </div>
+        </div>
+        <div class="team-grid">
+          <div class="modal-background" data-modal="false"></div>
+          <div class="modal-container" data-modal="false">
+            <div class="modal-employee">
+              <div class="employee-button">
+                <img
+                  class="employee-icon"
+                  src="./assets/icons/icon-close.png"
+                  alt="close modal"
+                />
+              </div>
+              <div class="employee-details">
+                <div class="employee-img-wrapper">
+                  <div class="employee-img"></div>
+                </div>
+                <div class="employee-information">
+                  <div class="employee-name"></div>
+                  <div class="employee-border"></div>
+                  <div class="employee-occupation"></div>
+                </div>
+                <div class="employee-links"></div>
+              </div>
+              <div class="employee-bio-wrapper">
+                <div class="employee-bio"><div class="bio-text"></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="team-employee" data-modal="false">
+            <div class="employee-details">
+              <div class="employee-img-wrapper">
+                <div class="employee-img-border">
+                  <div class="employee-img"></div>
+                  <div class="employee-button">
+                    <img
+                      class="employee-icon"
+                      src="./assets/icons/icon-close.png"
+                      alt="more information"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="employee-description">
+                <div class="employee-information">
+                  <div class="employee-name"></div>
+                  <div class="employee-border"></div>
+                  <div class="employee-occupation"></div>
+                </div>
+                <div class="employee-bio"><div class="bio-text"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="team-grid affiliate-grid">
+          <div class="team-heading">
+            Affiliated Team Members
+          </div>
+          <div class="modal-background" data-modal="false"></div>
+          <div class="modal-container" data-modal="false">
+            <div class="modal-employee">
+              <div class="employee-button">
+                <img
+                  class="employee-icon"
+                  src="./assets/icons/icon-close.png"
+                  alt="close modal"
+                />
+              </div>
+              <div class="employee-details">
+                <div class="employee-img-wrapper">
+                  <div class="employee-img"></div>
+                </div>
+                <div class="employee-information">
+                  <div class="employee-name"></div>
+                  <div class="employee-border"></div>
+                  <div class="employee-occupation"></div>
+                </div>
+                <div class="employee-links"></div>
+              </div>
+              <div class="employee-bio-wrapper">
+                <div class="employee-bio"><div class="bio-text"></div></div>
+              </div>
+            </div>
+          </div>
+          </div>
+          <div class="team-grid affiliate-grid">
+            <div class="team-heading">
+              Past Contributors 
+            </div>
+            <ul class="past-contributors">
+              <li> Tarek Sherif </li>
+              <li> Nicolas Kassis </li>
+              <li> Andrew Doyle </li>
+              <li> Marc Rousseau </li>
+              <li> Angela McCloskey </li>
+              <li> Rémi Bernard </li>
+              <li> Tristan Aumentado-Armstrong </li>
+              <li> Anton Zoubarev </li>
+              <li> Mathieu Desrosiers </li>
+              <li> Ehsan Afkhami </li>
+            </ul>
+          </div>
+         </div>
+      </section>
+    </div>
+    <%= require('html-loader!../partials/footer.html') %>
+  </body>
+</html>

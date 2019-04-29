@@ -1,0 +1,247 @@
+@import "../base";
+
+/*
+=============================================================
+| PROJECTS
+=============================================================
+*/
+
+$PROJECTS-CARD-TEXT: 7;
+$PROJECTS-TOGGLE-ICON: 0.5;
+
+.projects {
+  margin: $MARGIN / 1.5 + rem $PADDING + rem;
+  .projects-section {
+    @extend .cards-section;
+    margin: 0;
+    .project {
+      @extend .card-wrapper;
+      padding: $MARGIN / 3 + rem;
+      .project-card {
+        @extend .card;
+        padding: $PADDING / 2 + rem $PADDING / 3 + rem;
+        .project-card-logo {
+          padding: 0 $PADDING + rem;
+          .project-card-img {
+            width: 100%;
+          }
+        }
+        .project-card-text {
+          @extend .card-text;
+          flex-direction: column;
+          align-items: center;
+          min-height: $PROJECTS-CARD-TEXT + rem;
+          padding: 0;
+          padding-bottom: 1rem;
+          .project-card-title {
+            @extend .text-heading;
+            display: flex;
+            align-items: center;
+            padding: 0 + rem $PADDING / 2 + rem;
+            opacity: 0.5;
+            text-align: center;
+          }
+        }
+        .project-card-toggle-icon {
+          height: $PROJECTS-TOGGLE-ICON + rem;
+          transform: scaleY(1);
+          opacity: 0.2;
+          transition: all 0.5s ease-in-out;
+          position: absolute;
+          bottom: 1rem;
+        }
+        .project-card-bar {
+          @extend .bar-empty;
+        }
+        &:hover {
+          box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, 0.2);
+          transition: all 0.2s linear;
+          .project-card-text {
+            .project-card-title {
+              opacity: 1;
+            }
+          }
+          .project-card-bar {
+            @extend .bar-filled;
+            transition: all 0.5s ease-in-out;
+          }
+        }
+      }
+      .project-content {
+        height: 0;
+        opacity: 0;
+        transition: all 0.5s ease-in-out;
+        .project-content-wrapper {
+          display: flex;
+          align-items: center;
+          position: absolute;
+          left: 0;
+          overflow: hidden;
+          .project-content-text {
+            @extend .text;
+            text-align: justify;
+            padding: $PADDING + rem;
+            transition: margin-top 0.5s ease-in-out;
+            .project-content-header {
+              display: flex;
+              .project-content-title {
+                @extend .text-heading;
+                text-align: center;
+              }
+              .project-content-link {
+                text-decoration: none;
+                .link-img {
+                  width: 2rem;
+                  padding: 0 0.6rem;
+                }
+              }
+            }
+            .project-content-description {
+              margin: $PADDING / 2 + rem 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  @include breakpoint(desktop_xlarge) {
+    margin: $MARGIN / 1.5 + rem 20%;
+  }
+  @include breakpoint(desktop_large) {
+    .projects-section {
+      justify-content: flex-start;
+      .project {
+        flex: 0 1 33%;
+        padding: 1rem;
+        .project-content {
+          .project-content-wrapper {
+            .project-content-text {
+              padding: $PADDING + rem $PADDING * 2 + rem;
+
+            }
+          }
+        }
+      }
+    }
+  }
+  @include breakpoint(tablet) {
+    margin: $PADDING-TABLET * 1.5 + rem $PADDING-TABLET / 2 + rem;
+    .projects-section {
+      margin: 0;
+      padding: 0;
+      .project {
+        flex: 1 1 50%;
+        padding: $PADDING-TABLET / 2 + rem;
+        .project-card {
+          .project-card-text {
+            min-height: $PROJECTS-CARD-TEXT - $PADDING-TABLET + rem;
+            .project-card-title {
+              font-size: 1rem;
+              line-height: 1.5rem;
+            }
+          }
+        }
+        .project-content {
+          .project-content-wrapper {
+            .project-content-text {
+              margin: 0;
+              padding: $PADDING-TABLET + rem;
+              .project-content-header {
+                justify-content: center;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @include breakpoint(mobile) {
+    margin: $PADDING-MOBILE + rem 0;
+    .projects-section {
+      margin-left: 0;
+      margin-right: 0;
+      padding: 0;
+      .project {
+        padding: $PADDING-MOBILE + rem;
+        flex: 1 1 100%;
+        .project-card {
+          .project-card-logo {
+            padding: 0 $PADDING-MOBILE + rem;
+          }
+          .project-card-text {
+            min-height: 0;
+            margin-bottom: 0;
+            .project-card-title {
+              display: none;
+            }
+          }
+        }
+        .project-content {
+          .project-content-wrapper {
+            .project-content-text {
+              text-align: left;
+              padding: $PADDING-MOBILE + rem;
+              .project-content-header {
+                padding: $PADDING-MOBILE + rem 0;
+                .project-content-title {
+                  font-size: 1.2rem;
+                }
+              }
+              .project-content-description {
+                margin: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*
+=============================================================
+| PROJECTS - DRAWER OPEN
+=============================================================
+*/
+
+.projects {
+  .projects-section {
+    .project[data-selected="true"] {
+      padding-bottom: 0;
+      .project-card {
+        box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, 0.2);
+        .project-card-text {
+          opacity: 1;
+          transition: all 0.5s ease-in-out;
+          .project-card-title {
+            opacity: 1;
+          }
+        }
+        .project-card-toggle-icon {
+          transform: scaleY(-1);
+          opacity: 1;
+          transition: all 0.5s ease-in-out;
+        }
+        .project-card-logo {
+          .project-card-img {
+            opacity: 1;
+          }
+        }
+        .project-card-bar {
+          @extend .bar-filled;
+          background-color: $COLOR_CBRAIN;
+          transition: all 0.5s ease-in-out;
+        }
+      }
+      .project-content {
+        opacity: 1;
+        transition: all 0.5s linear;
+        .project-content-wrapper {
+          .project-content-text {
+            transition: margin-top 0.5s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+}

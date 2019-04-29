@@ -1,0 +1,575 @@
+/*
+=============================================================
+| VARIABLES
+=============================================================
+*/
+
+// -- COLOR
+
+$COLOR-AQUA-ISLAND: #a7d4dd;
+$COLOR-BLACK: #000000;
+$COLOR-BLACK-SQUEEZE: #ebf5f7;
+$COLOR-CBRAIN: #05a3d6;
+$COLOR-HUMMING-BIRD: #cdedf7;
+$COLOR-MODAL-BACKGROUND: rgba(0, 44, 71, 0.55);
+$COLOR-PRUSSIAN: #002c47;
+$COLOR-WHITE: #ffffff;
+$COLOR-WILD-SAND: #f5f5f5;
+
+.background-white {
+  background-color: $COLOR-WHITE;
+}
+
+.background-black-squeeze {
+  background-color: $COLOR-BLACK-SQUEEZE;
+}
+
+// -- MARGIN AND PADDING
+
+$MARGIN: 6;
+$PADDING: $MARGIN / 2;
+
+$MARGIN-TABLET: 4;
+$PADDING-TABLET: $MARGIN-TABLET / 2;
+
+$MARGIN-MOBILE: 2;
+$PADDING-MOBILE: $MARGIN-MOBILE / 2;
+
+$PADDING-BUTTON: 0.625;
+
+$CARD-MARGIN: 2;
+$CARD-PADDING: 1;
+
+// -- NAV AND FOOTER
+
+$NAV-HEIGHT: 3.75;
+$NAV-LOGO-TABLET: 7;
+
+$FOOTER-PADDING: 2;
+$FOOTER-ICONS: 6.25;
+
+// -- ICON
+
+$CLOSE-ICON-WIDTH: 2.5;
+
+/*
+=============================================================
+| BREAKPOINTS
+=============================================================
+*/
+
+@mixin breakpoint($breakpoint) {
+  @if $breakpoint == mobile {
+    @media only screen and (max-width: 640px) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media only screen and (min-width: 0px) and (max-width: 900px) {
+      @content;
+    }
+  } @else if $breakpoint == desktop {
+    @media only screen and (min-width: 900px) and (max-width: 1200px) {
+      @content;
+    }
+  } @else if $breakpoint == desktop_large {
+    @media only screen and (min-width: 1200px) {
+      @content;
+    }
+  } @else if $breakpoint == desktop_xlarge {
+    @media only screen and (min-width: 1600px) {
+      @content;
+    }
+  }
+}
+
+/*
+=============================================================
+| FONTS
+=============================================================
+*/
+
+.text {
+  font-family: "Roboto", sans-serif;
+  color: $COLOR-PRUSSIAN;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 300;
+}
+
+.text-card {
+  @extend .text;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.text-heading {
+  @extend .text;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 500;
+}
+
+.text-subtitle {
+  @extend .text;
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 2rem;
+}
+
+.text-banner {
+  @extend .text;
+  font-size: 1.1rem;
+  line-height: 1.7rem;
+  font-weight: 400;
+  color: $COLOR-PRUSSIAN;
+}
+
+.text-nav {
+  @extend .text;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1rem;
+}
+
+.text-button {
+  @extend .text;
+  text-transform: uppercase;
+  font-weight: 600;
+  line-height: unset;
+  color: $COLOR-WHITE;
+  text-decoration: none;
+  z-index: 1;
+}
+
+/*
+=============================================================
+| BUTTONS
+=============================================================
+*/
+
+@mixin button {
+  @extend .text-button;
+  width: fit-content;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.6px;
+  padding: $PADDING-BUTTON + rem $PADDING-BUTTON * 2 + rem;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 100%;
+    opacity: 1;
+    z-index: -1;
+    transition: 0.5s all ease;
+  }
+  &:hover {
+    transition: 0.3s all ease;
+    &:before {
+      left: 0;
+      right: 0;
+      opacity: 1;
+    }
+  }
+}
+@mixin button-default(
+  $font01: $COLOR-WHITE,
+  $font02: $COLOR-WHITE,
+  $fill01: $COLOR-PRUSSIAN,
+  $fill02: $COLOR-CBRAIN,
+  $border-color: none
+) {
+  @include button;
+  color: $font01;
+  background-color: $fill01;
+  border: 2px solid $border-color;
+  &:before {
+    background-color: $fill02;
+  }
+  &:hover {
+    color: $font02;
+    transition: 0.3s color ease;
+  }
+}
+
+.button-filled {
+  @include button-default;
+}
+
+.button-outlined {
+  @include button-default(
+    $COLOR-PRUSSIAN,
+    $COLOR-WHITE,
+    transparent,
+    $COLOR-PRUSSIAN,
+    $COLOR-PRUSSIAN
+  );
+  padding: $PADDING-BUTTON - 0.125 + rem $PADDING-BUTTON * 2 + rem;
+}
+
+.button-close {
+  @extend .button-filled;
+  width: $CLOSE-ICON-WIDTH + rem;
+  height: $CLOSE-ICON-WIDTH + rem;
+  padding: 0;
+  font-size: 1.5rem;
+  font-weight: 300;
+  box-shadow: none;
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  border-radius: 50%;
+  z-index: 1;
+  &:before {
+    content: "";
+    width: 0%;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    bottom: 50%;
+    right: 100%;
+    opacity: 0;
+    transition: 0.2s all linear;
+  }
+}
+
+.button-close-hover {
+  &:before {
+    width: 100%;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 1;
+    transform: translate(0%, 0);
+    transition: 0.2s all linear;
+  }
+}
+
+/*
+=============================================================
+| CARDS
+=============================================================
+*/
+
+.bar-empty {
+  height: 0.25rem;
+  background-color: $COLOR-PRUSSIAN;
+  border-radius: 3px;
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  transition: 0.2s left ease, 0.2s right ease;
+}
+
+.bar-filled {
+  left: 0;
+  right: 0;
+  transition: 0.2s left ease, 0.2s right ease;
+}
+
+.cards-section {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  justify-content: space-between;
+  margin: $CARD-MARGIN + rem;
+  .card-wrapper {
+    flex: 0 1 50%;
+    padding: $CARD-MARGIN + rem;
+    transition: padding-bottom 0.5s ease;
+    .card {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+      border-radius: 3px;
+      cursor: pointer;
+      position: relative;
+      .card-img {
+        flex: 1 1 100%;
+        display: flex;
+        justify-content: center;
+        padding: $CARD-PADDING + rem $CARD-MARGIN + rem;
+      }
+      .card-text {
+        @extend .text-card;
+        flex: 1 1 100%;
+        display: flex;
+        justify-content: center;
+        padding: $CARD-PADDING + rem 0;
+      }
+      .card-bottom {
+        @extend .bar-empty;
+      }
+      &:hover {
+        box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, 0.2);
+        .card-bottom {
+          @extend .bar-filled;
+        }
+      }
+    }
+  }
+}
+
+/*
+=============================================================
+| BODY
+=============================================================
+*/
+
+* {
+  @extend .text;
+  margin: 0px;
+  box-sizing: border-box;
+  font-size: 16px;
+  @include breakpoint(tablet) {
+    font-size: 20px;
+  }
+}
+
+body {
+  height: 100vh;
+  padding-top: $NAV-HEIGHT + rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/*
+=============================================================
+| NAVIGATION BAR
+=============================================================
+*/
+
+.nav {
+  height: $NAV-HEIGHT + rem;
+  width: 100%;
+  background-color: $COLOR-PRUSSIAN;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 0 8px 6px -6px #81acb9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  z-index: 10;
+  .logo {
+    width: 10rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to right, $COLOR-CBRAIN, #026085);
+    text-decoration: none;
+    .logo-img {
+      width: 100%;
+      padding: $PADDING-BUTTON * 2 + rem;
+    }
+  }
+  .bar {
+    align-self: flex-end;
+    display: flex;
+    height: 100%;
+    .links {
+      display: flex;
+      .link {
+        @extend .text-nav;
+        text-decoration: none;
+        padding: $PADDING-BUTTON * 2 + rem;
+        border-bottom: 2px solid transparent;
+        &:hover,
+        &[data-active] {
+          color: $COLOR_WHITE;
+          transition: all 0.2s ease-in-out;
+        }
+      }
+      .login {
+        @extend .button-outlined, .text-nav;
+        border: none;
+        border-left: 2px solid $COLOR-CBRAIN;
+        padding: $PADDING-BUTTON + rem $PADDING-BUTTON * 5 + rem;
+        color: rgba(255, 255, 255, 0.6);
+        font-weight: 300;
+        box-shadow: none;
+        &:before {
+          background-color: $COLOR-CBRAIN;
+        }
+        &:hover {
+          color: $COLOR-WHITE;
+        }
+      }
+    }
+    .burger {
+      width: fit-content;
+      display: none;
+      .burger-img {
+        height: 100%;
+        padding: $PADDING-BUTTON * 2 + rem 0;
+        pointer-events: none;
+      }
+    }
+  }
+  @include breakpoint(tablet) {
+    .logo {
+      width: $NAV-LOGO-TABLET + rem;
+      .logo-img {
+        padding: $PADDING-BUTTON + rem 0;
+      }
+    }
+    .bar {
+      width: calc(100% - 10rem);
+      flex-direction: column;
+      flex-wrap: wrap;
+      .links {
+        display: none;
+      }
+      .burger {
+        display: block;
+        align-self: flex-end;
+        padding-right: 2rem;
+        opacity: 0.6;
+        height: 100%;
+        cursor: pointer;
+        &:hover {
+          opacity: 1;
+          transition: all 0.3s ease-in-out;
+        }
+      }
+    }
+    &[data-open="true"] {
+      .bar {
+        .links {
+          display: flex;
+          flex-direction: column;
+          background-color: $COLOR-PRUSSIAN;
+          opacity: 0.95;
+          position: absolute;
+          top: $NAV-HEIGHT + rem;
+          right: 0;
+          width: 100%;
+          z-index: 5;
+          .link {
+            width: 100%;
+            text-align: center;
+            &:hover {
+              background-color: $COLOR-CBRAIN;
+            }
+          }
+          .login {
+            padding: $PADDING-BUTTON * 2 + rem;
+            border-left: none;
+            &:before {
+              background-color: transparent;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*
+=============================================================
+| FOOTER
+=============================================================
+*/
+
+.partnership {
+  align-self: flex-end;
+  width: 100%;
+  background-color: $COLOR-WILD-SAND;
+  text-transform: uppercase;
+  padding: $FOOTER-PADDING * 2 + rem;
+  border-top: 2px solid $COLOR-WHITE;
+  .partnership-icons {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .partnership-icon {
+      width: $FOOTER-ICONS + rem;
+      margin: 0px $FOOTER-PADDING + rem;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  @include breakpoint(tablet) {
+    padding: $FOOTER-PADDING + rem;
+    .partnership-text {
+      text-align: center;
+    }
+    .partnership-icons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 0;
+      .partnership-icon {
+        width: none;
+        height: none;
+        margin: $FOOTER-PADDING / 2 + rem;
+      }
+    }
+  }
+  @include breakpoint(mobile) {
+    .partnership-icons {
+      flex-direction: column;
+    }
+  }
+}
+
+/*
+=============================================================
+| ANIMATIONS - INTERACTIONS
+=============================================================
+*/
+
+.circle-spin {
+  padding: 0;
+  border: 4px solid transparent;
+  border-radius: 50%;
+  box-shadow: none;
+  position: relative;
+  &::before,
+  &::after {
+    box-sizing: inherit;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    border: 4px solid transparent;
+  }
+}
+
+.circle-spin-hover {
+  &::before {
+    border-top-color: $COLOR-CBRAIN;
+    border-left-color: $COLOR-CBRAIN;
+    border-bottom-color: $COLOR-CBRAIN;
+    border-right-color: $COLOR-CBRAIN;
+    transition: border-bottom-color 0.15s linear,
+      border-left-color 0.15s linear 0.1s, border-top-color 0.15s linear 0.2s,
+      border-right-color 0.15s linear 0.3s;
+  }
+  &::after {
+    border-bottom: 4px solid $COLOR-CBRAIN;
+    border-left: 4px solid $COLOR-CBRAIN;
+    border-right: 4px solid $COLOR-CBRAIN;
+    transform: rotate(180deg);
+    transition: transform 0.4s linear 0s;
+  }
+}

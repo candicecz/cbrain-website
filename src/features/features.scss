@@ -1,0 +1,114 @@
+@import "../base";
+
+/*
+=============================================================
+| FEATURES
+=============================================================
+*/
+
+$FEATURES-ANIMATION: 18.75;
+$FEATURES-ANIMATION-TABLET: 15;
+
+.features {
+  .feature {
+    padding: $PADDING * 2 + rem 8%;
+    .feature-content {
+      @extend .text;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      .feature-img {
+        @extend .background-black-squeeze;
+        flex: 0 1 $FEATURES-ANIMATION + rem;
+        border-radius: 4px;
+        align-self: center;
+        margin-right: $MARGIN / 3 + rem;
+        opacity: 1;
+        transition: opacity 0.5s ease;
+        &[data-animate="false"] {
+          opacity: 0.5;
+          transition: opacity 0.5s ease;
+        }
+      }
+      .feature-paragraph {
+        flex: 1 1 50%;
+        margin-left: $MARGIN / 3 + rem;
+        text-align: justify;
+        .feature-headline {
+          @extend .text-heading;
+          text-align: right;
+          margin-bottom: $MARGIN / 3 + rem;
+        }
+        p {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+  .reversed {
+    @extend .background-black-squeeze;
+    .feature-content {
+      flex-direction: row-reverse;
+      .feature-img {
+        background-color: $COLOR-WHITE;
+        margin-left: $MARGIN / 3 + rem;
+        margin-right: 0;
+      }
+      .feature-paragraph {
+        margin-left: 0;
+        margin-right: $MARGIN / 3 + rem;
+        .feature-headline {
+          text-align: left;
+        }
+      }
+    }
+  }
+  @include breakpoint(desktop_large) {
+    .feature {
+      padding: $PADDING * 2 + rem 20%;
+    }
+  }
+  @include breakpoint(desktop_xlarge) {
+    .feature {
+      padding: $PADDING * 2 + rem 25%;
+    }
+  }
+  @include breakpoint(tablet) {
+    .feature {
+      padding: $PADDING-TABLET + rem $PADDING-TABLET / 2 + rem;
+      .feature-content {
+        .feature-img {
+          flex: 0 1 $FEATURES-ANIMATION-TABLET + rem;
+          margin: 0 $PADDING-TABLET / 2 + rem;
+          margin-top: $PADDING-TABLET + rem;
+        }
+        .feature-paragraph {
+          margin: $PADDING-TABLET + rem $PADDING-TABLET / 2 + rem;
+          .feature-headline {
+            text-align: center;
+            margin-bottom: $PADDING-TABLET + rem;
+          }
+        }
+      }
+    }
+  }
+  @include breakpoint(mobile) {
+    .feature {
+      padding: $MARGIN_MOBILE + rem;
+      .feature-content {
+        margin-top: 0;
+        .feature-img {
+          margin: 0;
+        }
+        .feature-paragraph {
+          margin: 0;
+          text-align: left;
+          .feature-headline {
+            margin: $MARGIN-MOBILE + rem 0;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,416 @@
+@import "../base";
+
+/*
+=============================================================
+| ABOUT - GRID SECTION
+=============================================================
+*/
+
+$ABOUT-EMPLOYEE-IMG: 8;
+$ABOUT-EMPLOYEE-ICON: 0.75;
+$ABOUT-EMPLOYEE-BORDER: 12.5;
+
+$ABOUT-MODAL-MARGIN: 1;
+$ABOUT-MODAL-PADDING: $ABOUT-MODAL-MARGIN / 2;
+$ABOUT-MODAL-WIDTH: 45;
+$ABOUT-MODAL-HEIGHT: 32;
+$ABOUT-MODAL-SCROLL: 0.5;
+$ABOUT-MODAL-EXTERNAL: 1;
+
+.about {
+  .about-team {
+    .team-heading {
+      @extend .text-heading;
+      text-align: center;
+      width: 100%;
+      background-color: $COLOR-BLACK-SQUEEZE;
+      padding: $MARGIN + rem;
+      .team-description {
+        @extend .text;
+        padding: $PADDING / 2 + rem 15%;
+        padding-bottom: 0;
+        font-weight: 400;
+        a {
+          font-weight: 400;
+        }
+      }
+    }
+    .team-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: $PADDING + rem 0;
+      .team-employee {
+        flex: 0 1 25rem;
+        padding: $MARGIN / 3 + rem;
+        cursor: pointer;
+        text-align: center;
+        &[data-modal="false"] {
+          .employee-details:hover {
+            .employee-img-wrapper .employee-img-border {
+              @extend .circle-spin-hover;
+              .employee-button {
+                &:before {
+                  width: 100%;
+                  right: 0;
+                  top: 0;
+                  bottom: 0;
+                  opacity: 1;
+                  transform: translate(0%, 0);
+                  transition: 0.2s all linear;
+                }
+              }
+            }
+            .employee-description .employee-information .employee-border {
+              &:before {
+                height: 3px;
+                left: 0%;
+                right: 0%;
+                transition: 0.4s all ease;
+              }
+            }
+          }
+        }
+        .employee-details {
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          cursor: pointer;
+          .employee-img-wrapper {
+            width: 45%;
+            position: relative;
+            &:after {
+              content: "";
+              display: block;
+              padding-bottom: 100%;
+            }
+            .employee-img-border {
+              @extend .circle-spin;
+              width: 100%;
+              height: 100%;
+              padding: $ABOUT-MODAL-PADDING + rem;
+              display: flex;
+              position: absolute;
+              .employee-img {
+                width: 100%;
+                position: relative;
+                overflow: hidden;
+                border-radius: 50%;
+                background-size: cover;
+              }
+              .employee-button {
+                @extend .button-close;
+                .employee-icon {
+                  width: $ABOUT-EMPLOYEE-ICON + rem;
+                  height: $ABOUT-EMPLOYEE-ICON + rem;
+                  transform: rotate(45deg);
+                }
+              }
+            }
+          }
+          .employee-description {
+            .employee-information {
+              margin: $ABOUT-MODAL-MARGIN + rem 0;
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: center;
+              .employee-name {
+                @extend .text-subtitle;
+                width: 100%;
+              }
+              .employee-border {
+                background-color: $COLOR-PRUSSIAN;
+                height: 1px;
+                width: $ABOUT-EMPLOYEE-BORDER + rem;
+                margin: $ABOUT-MODAL-MARGIN + rem 0px;
+                position: relative;
+                transition: 0.3s all ease;
+                &::before {
+                  background: $COLOR-CBRAIN;
+                  position: absolute;
+                  content: "";
+                  top: 0;
+                  bottom: 0;
+                  left: 50%;
+                  right: 50%;
+                }
+              }
+              .employee-occupation {
+                width: 100%;
+              }
+            }
+            .employee-bio {
+              display: none;
+            }
+          }
+        }
+      }
+      .past-contributors {
+        padding: 2rem;
+        list-style-type: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        li {
+          padding: 1rem;
+        }
+      }
+    }
+  }
+  @include breakpoint(tablet) {
+    .about-team {
+      .team-heading {
+        padding: $MARGIN-TABLET + rem 0;
+        margin-bottom: $PADDING-TABLET + rem;
+        .team-description {
+          padding: $PADDING / 2 + rem;
+          padding-bottom:0;
+        }
+      }
+      .team-grid {
+        .team-employee {
+          flex: 0 0 50%;
+          padding: $PADDING / 2 + rem;
+          .employee-details {
+            .employee-img-wrapper {
+              width: 55%;
+              .employee-img-border {
+                .employee-button {
+                  width: $CLOSE-ICON-WIDTH - 0.5 + rem;
+                  height: $CLOSE-ICON-WIDTH - 0.5 + rem;
+                  .employee-icon {
+                    width: 0.5rem;
+                    height: 0.5rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @include breakpoint(mobile) {
+    .about-team {
+      .team-heading {
+        padding: $MARGIN-MOBILE + rem;
+        margin-bottom: $PADDING-MOBILE + rem;
+      }
+      .team-grid {
+        .team-employee {
+          flex: 0 1 100%;
+          padding: $MARGIN-MOBILE + rem;
+        }
+        .past-contributors li{
+          text-align: center;
+          flex: 1 1 100%;
+        }
+      }
+    }
+  }
+}
+
+/*
+=============================================================
+| ABOUT - MODAL
+=============================================================
+*/
+
+body[data-modal="true"] {
+  overflow: hidden;
+}
+
+.about {
+  .about-team {
+    .team-grid {
+      .modal-background[data-modal="true"] {
+        display: flex;
+        background-color: $COLOR-MODAL-BACKGROUND;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        cursor: pointer;
+      }
+      .modal-container {
+        ::-webkit-scrollbar {
+          -webkit-appearance: none;
+          width: $ABOUT-MODAL-SCROLL + rem;
+          border-radius: 50px;
+        }
+        ::-webkit-scrollbar-thumb {
+          border-radius: 4px;
+          -webkit-box-shadow: inset 0 0 10px 10px $COLOR-PRUSSIAN;
+        }
+        display: none;
+        &[data-modal="true"] {
+          height: $ABOUT-MODAL-HEIGHT + rem;
+          width: $ABOUT-MODAL-WIDTH + rem;
+          display: flex;
+          position: fixed;
+          top: 25%;
+          z-index: 10;
+          box-shadow: 0px 0px 30px -1px $COLOR-MODAL-BACKGROUND;
+          background-color: $COLOR-WHITE;
+          .modal-employee[data-modal="true"] {
+            position: relative;
+            display: flex;
+            width: 100%;
+            .employee-button {
+              @extend .button-close;
+              top: 0;
+              right: 0;
+              transform: translate(50%, -50%) rotate(0deg);
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              &:hover {
+                @extend .button-close-hover;
+              }
+              .employee-icon {
+                width: $ABOUT-EMPLOYEE-ICON + rem;
+                height: $ABOUT-EMPLOYEE-ICON + rem;
+              }
+            }
+            .employee-details {
+              @extend .background-black-squeeze;
+              display: flex;
+              flex-direction: row;
+              flex: 0 0 35%;
+              flex-wrap: wrap;
+              padding-top: $ABOUT-MODAL-MARGIN + rem;
+              .employee-img-wrapper {
+                width: 100%;
+                display: flex;
+                border-radius: 100%;
+                margin: $ABOUT-MODAL-MARGIN + rem 0;
+                justify-content: center;
+                .employee-img {
+                  width: $ABOUT-EMPLOYEE-IMG + rem;
+                  height: $ABOUT-EMPLOYEE-IMG + rem;
+                  border-radius: 50%;
+                  background-size: cover;
+                }
+              }
+              .employee-information {
+                @extend .text;
+                width: 100%;
+                text-align: center;
+                padding: 0 1rem;
+                .employee-name {
+                  @extend .text-subtitle;
+                  margin: $ABOUT-MODAL-PADDING + rem 0;
+                }
+              }
+              .employee-links {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                margin-top: $ABOUT-MODAL-MARGIN + rem;
+                justify-content: flex-end;
+                .employee-link {
+                  @extend .button-filled;
+                  width: 100%;
+                  padding: $ABOUT-MODAL-MARGIN + rem;
+                  background-color: $COLOR-PRUSSIAN;
+                  text-decoration: none;
+                  cursor: pointer;
+                  position: relative;
+                  border-radius: 0;
+                  border-bottom: 1px solid $COLOR-BLACK-SQUEEZE;
+                  &::after {
+                    content: "";
+                    background-image: url("../assets/icons/icon-external-link-white.png");
+                    background-size: cover;
+                    width: $ABOUT-MODAL-EXTERNAL + rem;
+                    height: $ABOUT-MODAL-EXTERNAL + rem;
+                    margin: $ABOUT-MODAL-MARGIN + rem;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                  }
+                }
+              }
+            }
+            .employee-bio-wrapper {
+              overflow-y: hidden;
+              margin: $ABOUT-MODAL-MARGIN + rem 0;
+              display: flex;
+              align-items: center;
+              flex-direction: column;
+              justify-content: center;
+              .employee-bio {
+                @extend .text;
+                display: flex;
+                overflow-y: scroll;
+                margin: $ABOUT-MODAL-MARGIN + rem $ABOUT-MODAL-MARGIN * 2 + rem;
+                margin-right: 0.5rem;
+                .bio-text {
+                  margin-right: 2rem;
+                }
+              }
+            }
+          }
+        }
+      }
+      @include breakpoint(tablet) {
+        .modal-container[data-modal="true"] {
+          width: 80%;
+          height: 80%;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          .modal-employee[data-modal="true"] {
+            flex-direction: column;
+            position: unset;
+            .employee-details {
+              display: block;
+            }
+            .employee-bio-wrapper {
+              flex: 1 1 100%;
+              .employee-bio {
+                margin: $ABOUT-MODAL-PADDING + rem $ABOUT-MODAL-MARGIN * 2 + rem;
+              }
+            }
+          }
+        }
+      }
+      @include breakpoint(mobile) {
+        .modal-container[data-modal="true"] {
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          padding-bottom: $CLOSE_ICON_WIDTH * 2 + rem;
+          transform: translate(0, 0);
+          ::-webkit-scrollbar {
+            width: $ABOUT-MODAL-SCROLL / 2 + rem;
+          }
+          .modal-employee[data-modal="true"] {
+            overflow-y: scroll;
+            .employee-button {
+              position: fixed;
+              bottom: 0;
+              top: unset;
+              right: 50%;
+              transform: translate(50%, -50%);
+            }
+            .employee-bio-wrapper {
+              overflow-y: visible;
+              .employee-bio {
+                overflow-y: visible;
+                margin: $ABOUT-MODAL-MARGIN + rem;
+                .bio-text {
+                  margin: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
