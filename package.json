@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A website for CBRAIN",
   "private": "true",
-  "homepage": "https://github.com/candicecz/cbrain-web",
+  "homepage": "https://github.com/aces/cbrain-website",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.prod.config.js",
@@ -13,13 +13,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/candicecz/cbrain-web.git"
+    "url": "git+https://github.com/aces/cbrain-website.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/candicecz/cbrain-web/issues"
+    "url": "https://github.com/aces/cbrain-website/issues"
   },
   "devDependencies": {
     "@babel/core": "^7.3.3",
