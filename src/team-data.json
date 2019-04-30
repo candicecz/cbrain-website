@@ -27,7 +27,7 @@
     "name": "Natacha Beck",
     "links": {},
     "occupation": "Senior Research Platform Developer",
-    "bio": "Ms. Beck has been a software developer at the McGill Centre of Integrative Neuroscience at the McGill Neurological Institute since 2011 and has training and background in bioinformatics. She previously worked at the University of Montreal on genetic annotation pipelines and annotating mitochondrial genomes.  At MCIN she works on the CBRAIN platform, she works on the frontend and on the backend of the platform. She especially likes to work on tools containerization and integration. Ms. Beck received her Master of Life Science, Genetics and Informatics in 2007 from Nancy-1",
+    "bio": "Ms. Beck has been a software developer at the McGill Centre of Integrative Neuroscience at the McGill Neurological Institute since 2011 and has training and background in bioinformatics. She previously worked at the University of Montreal on genetic annotation pipelines and annotating mitochondrial genomes.  At MCIN she works on the CBRAIN platform, she works on the frontend and on the backend of the platform. She especially likes to work on tools containerization and integration. Ms. Beck received her Master of Life Science, Genetics and Informatics in 2007 from Nancy-1.",
     "imageURL": "team-nat.jpg"
   },
   "4": {
@@ -113,7 +113,7 @@
     "affiliated": true,
     "links": {},
     "occupation": "Associate Director of Research Software Development",
-    "bio": "n/a",
+    "bio": "",
     "imageURL": "team-samir.jpg"
   }
 }

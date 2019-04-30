@@ -278,12 +278,10 @@ body[data-modal="true"] {
             .employee-details {
               @extend .background-black-squeeze;
               display: flex;
-              flex-direction: row;
+              flex-direction: column;
               flex: 0 0 35%;
-              flex-wrap: wrap;
               padding-top: $ABOUT-MODAL-MARGIN + rem;
               .employee-img-wrapper {
-                width: 100%;
                 display: flex;
                 border-radius: 100%;
                 margin: $ABOUT-MODAL-MARGIN + rem 0;
@@ -307,6 +305,7 @@ body[data-modal="true"] {
               }
               .employee-links {
                 width: 100%;
+                height: 100%;
                 display: flex;
                 flex-direction: column;
                 margin-top: $ABOUT-MODAL-MARGIN + rem;
@@ -368,6 +367,9 @@ body[data-modal="true"] {
             position: unset;
             .employee-details {
               display: block;
+              .employee-links {
+                height: auto;
+              }
             }
             .employee-bio-wrapper {
               flex: 1 1 100%;
