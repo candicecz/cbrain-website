@@ -46,7 +46,7 @@ $PROJECTS-TOGGLE-ICON: 0.5;
           height: $PROJECTS-TOGGLE-ICON + rem;
           transform: scaleY(1);
           opacity: 0.2;
-          transition: all 0.5s ease-in-out;
+          transition: transform 0.5s ease-in-out, opacity 0.2s ease-in-out;
           position: absolute;
           bottom: 1rem;
         }
@@ -60,6 +60,10 @@ $PROJECTS-TOGGLE-ICON: 0.5;
             .project-card-title {
               opacity: 1;
             }
+          }
+          .project-card-toggle-icon {
+            opacity: 1;
+            transition: opacity 0.2s ease-in-out;
           }
           .project-card-bar {
             @extend .bar-filled;
@@ -82,18 +86,17 @@ $PROJECTS-TOGGLE-ICON: 0.5;
             text-align: justify;
             padding: $PADDING + rem;
             transition: margin-top 0.5s ease-in-out;
-            .project-content-header {
+            .project-content-link {
               display: flex;
+              text-decoration: none;
+              align-items: center;
               .project-content-title {
                 @extend .text-heading;
                 text-align: center;
               }
-              .project-content-link {
-                text-decoration: none;
-                .link-img {
-                  width: 2rem;
-                  padding: 0 0.6rem;
-                }
+              .link-img {
+                width: 2rem;
+                padding: 0 0.6rem;
               }
             }
             .project-content-description {
@@ -146,7 +149,7 @@ $PROJECTS-TOGGLE-ICON: 0.5;
             .project-content-text {
               margin: 0;
               padding: $PADDING-TABLET + rem;
-              .project-content-header {
+              .project-content-link {
                 justify-content: center;
               }
             }
@@ -181,7 +184,7 @@ $PROJECTS-TOGGLE-ICON: 0.5;
             .project-content-text {
               text-align: left;
               padding: $PADDING-MOBILE + rem;
-              .project-content-header {
+              .project-content-link {
                 padding: $PADDING-MOBILE + rem 0;
                 .project-content-title {
                   font-size: 1.2rem;
@@ -221,6 +224,7 @@ $PROJECTS-TOGGLE-ICON: 0.5;
           transform: scaleY(-1);
           opacity: 1;
           transition: all 0.5s ease-in-out;
+          transition: transform 0.5s ease-in-out, opacity 0.2s ease-in-out;
         }
         .project-card-logo {
           .project-card-img {
