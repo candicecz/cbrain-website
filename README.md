@@ -1,5 +1,5 @@
 # cbrain-website
-Website for the CBRAIN service
+### Website for the CBRAIN service
 
-npm install
-npm run start
+1. npm install
+2. npm run start
