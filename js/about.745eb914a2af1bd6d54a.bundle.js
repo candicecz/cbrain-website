@@ -794,7 +794,6 @@ var loadEmployee = Object.entries(_team_data_json__WEBPACK_IMPORTED_MODULE_2__).
       k = _ref4[0],
       v = _ref4[1];
 
-  console.log(k, v, i);
   var grid_el = document.querySelector(".team-grid");
   var affiliate_grid_el = document.querySelector(".affiliate-grid");
   var employee = document.querySelector(".team-employee");
@@ -854,4 +853,4 @@ exports.push([module.i, "", ""]);
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=about.b1ccb06416efc01e0bb7.bundle.js.map
+//# sourceMappingURL=about.745eb914a2af1bd6d54a.bundle.js.map
