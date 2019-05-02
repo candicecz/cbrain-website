@@ -43,7 +43,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({"4":"lottie"}[chunkId]||chunkId) + "." + "745eb914a2af1bd6d54a" + ".bundle.js"
+/******/ 		return __webpack_require__.p + "" + ({"4":"lottie"}[chunkId]||chunkId) + "." + "3706095312811b151444" + ".bundle.js"
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -193,11 +193,35 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 17);
+/******/ 	return __webpack_require__(__webpack_require__.s = 18);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ (function(module, exports) {
+
+/*
+ NOTE: In production, we wrap the repo in an iframe so that we can use a custom domain on a repo held within an organization.
+ In doing so, we lose the favicon and responsive mobile view. This function must execute on each html page in order to
+ repair that.
+*/
+(function addFavicon() {
+  var link = parent.document.createElement("link");
+  link.type = "image/x-icon";
+  link.rel = "shortcut icon";
+  link.href = "http://acelab.ca/assets/cbrain-icon-blue.png";
+  parent.document.getElementsByTagName("head")[0].appendChild(link);
+})();
+
+(function makeViewportResponsive() {
+  var meta = parent.document.createElement("meta");
+  meta.content = "width = device-width, initial-scale = 1";
+  meta.name = "viewport";
+  parent.document.getElementsByTagName("head")[0].appendChild(meta);
+})();
+
+/***/ }),
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -288,7 +312,7 @@ function toComment(sourceMap) {
 }
 
 /***/ }),
-/* 1 */
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -357,7 +381,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(2);
+var	fixUrls = __webpack_require__(3);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -692,7 +716,7 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(module, exports) {
 
 
@@ -787,7 +811,7 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports) {
 
 /*
@@ -815,7 +839,7 @@ burger.addEventListener("click", toggleNavigation);
 window.addEventListener("load", setSelectedLink);
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -830,7 +854,7 @@ var isElementInView = function isElementInView(el) {
 };
 
 /* harmony default export */ __webpack_exports__["a"] = (function (elements) {
-  __webpack_require__.e(/* import() | lottie */ 4).then(__webpack_require__.t.bind(null, 7, 7)).then(function (lottieData) {
+  __webpack_require__.e(/* import() | lottie */ 4).then(__webpack_require__.t.bind(null, 8, 7)).then(function (lottieData) {
     var lottie = lottieData.default;
 
     var startAnimation = function startAnimation(el) {
@@ -875,7 +899,6 @@ var isElementInView = function isElementInView(el) {
 });
 
 /***/ }),
-/* 5 */,
 /* 6 */,
 /* 7 */,
 /* 8 */,
@@ -887,36 +910,40 @@ var isElementInView = function isElementInView(el) {
 /* 14 */,
 /* 15 */,
 /* 16 */,
-/* 17 */
+/* 17 */,
+/* 18 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _features_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(18);
-/* harmony import */ var _features_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_features_scss__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _animations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4);
-/* harmony import */ var _partials_partials__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
-/* harmony import */ var _partials_partials__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_partials_partials__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
+/* harmony import */ var _base__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_base__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _features_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(19);
+/* harmony import */ var _features_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_features_scss__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _animations__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5);
+/* harmony import */ var _partials_partials__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
+/* harmony import */ var _partials_partials__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_partials_partials__WEBPACK_IMPORTED_MODULE_3__);
+
 
 
 
 var animations = Array.from(document.querySelectorAll(".animation"));
 window.addEventListener("load", function () {
-  return Object(_animations__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"])(animations);
+  return Object(_animations__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(animations);
 });
 window.addEventListener("scroll", function () {
-  return Object(_animations__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"])(animations);
+  return Object(_animations__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(animations);
 });
 window.addEventListener("resize", function () {
-  return Object(_animations__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"])(animations);
+  return Object(_animations__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(animations);
 });
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(19);
+var content = __webpack_require__(20);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -930,17 +957,17 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(1)(content, options);
+var update = __webpack_require__(2)(content, options);
 
 if(content.locals) module.exports = content.locals;
 
 if(false) {}
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(0)(false);
+exports = module.exports = __webpack_require__(1)(false);
 // Module
 exports.push([module.i, "", ""]);
 
@@ -948,4 +975,4 @@ exports.push([module.i, "", ""]);
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=features.745eb914a2af1bd6d54a.bundle.js.map
+//# sourceMappingURL=features.3706095312811b151444.bundle.js.map
