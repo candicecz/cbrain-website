@@ -1,3 +1,4 @@
+import "../base";
 import "./index.scss";
 import  handleAnimations  from "../animations";
 import "../partials/partials";
