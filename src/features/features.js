@@ -1,4 +1,3 @@
-import "../base";
 import "./features.scss";
 import  handleAnimations  from "../animations";
 import "../partials/partials";

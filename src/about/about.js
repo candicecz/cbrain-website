@@ -1,4 +1,3 @@
-import "../base";
 import "./about.scss";
 import "../partials/partials";
 import teamData from "../team-data.json";

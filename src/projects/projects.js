@@ -1,4 +1,3 @@
-import "../base";
 import "./projects.scss";
 import "../partials/partials";
 import projectData from "../projects-data.json";

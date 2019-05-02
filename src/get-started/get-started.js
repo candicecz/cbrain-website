@@ -1,4 +1,3 @@
-import "../base";
 import "./get-started.scss";
 import "../partials/partials";
 
