@@ -82,7 +82,7 @@ $PROJECTS-TOGGLE-ICON: 0.5;
           left: 0;
           overflow: hidden;
           opacity: 0;
-          transition: opacity 1s linear;
+          transition: opacity 0.2s linear;
           .project-content-text {
             @extend .text;
             text-align: justify;
@@ -244,7 +244,7 @@ $PROJECTS-TOGGLE-ICON: 0.5;
         transition: all 0.5s linear;
         .project-content-wrapper {
           opacity: 1;
-          transition: opacity 1s linear;
+          transition: opacity 0.2s linear;
           .project-content-text {
             transition: margin-top 0.5s ease-in-out;
           }
