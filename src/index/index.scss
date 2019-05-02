@@ -43,6 +43,7 @@ $HOME-ANIMATION: 12.5;
         }
         .banner-description-button {
           @extend .button-filled, .text-button;
+          display: table;
         }
       }
       .banner-img {
