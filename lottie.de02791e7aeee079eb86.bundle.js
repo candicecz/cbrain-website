@@ -584,7 +584,7 @@ var a, b;
         return 0 | a.g(4);
       }, n.quick = function () {
         return a.g(4) / 4294967296;
-      }, n.double = n, E(x(a.S), o), (e.pass || r || function (t, e, r, i) {
+      }, n["double"] = n, E(x(a.S), o), (e.pass || r || function (t, e, r, i) {
         return i && (i.S && b(i, a), t.state = function () {
           return b(a, {});
         }), r ? (h[c] = t, e) : t;
@@ -2951,12 +2951,12 @@ var a, b;
     return {
       newElement: o,
       release: function release(t) {
-        s === a && (n = pooling.double(n), a *= 2), r && r(t), n[s] = t, s += 1;
+        s === a && (n = pooling["double"](n), a *= 2), r && r(t), n[s] = t, s += 1;
       }
     };
   },
       pooling = {
-    double: function double(t) {
+    "double": function double(t) {
       return t.concat(createSizedArray(t.length));
     }
   },
@@ -3000,7 +3000,7 @@ var a, b;
         shape_pool.release(t.shapes[e]);
       }
 
-      t._length = 0, HA === IA && (JA = pooling.double(JA), IA *= 2);
+      t._length = 0, HA === IA && (JA = pooling["double"](JA), IA *= 2);
       JA[HA] = t, HA += 1;
     }
   }, HA = 0, IA = 4, JA = createSizedArray(IA), GA),
@@ -5004,7 +5004,7 @@ var a, b;
     }, 0, degToRads, this), i.g = new GradientProperty(this, t.g, this)), i.o = PropertyFactory.getProp(this, t.o, 0, .01, this), "st" == t.ty || "gs" == t.ty) {
       if (r.lc = this.lcEnum[t.lc] || "round", r.lj = this.ljEnum[t.lj] || "round", 1 == t.lj && (r.ml = t.ml), i.w = PropertyFactory.getProp(this, t.w, 0, null, this), i.w.k || (r.wi = i.w.v), t.d) {
         var s = new DashProperty(this, t.d, "canvas");
-        i.d = s, i.d.k || (r.da = i.d.dashArray, r.do = i.d.dashoffset[0]);
+        i.d = s, i.d.k || (r.da = i.d.dashArray, r["do"] = i.d.dashoffset[0]);
       }
     } else r.r = 2 === t.r ? "evenodd" : "nonzero";
 
@@ -5108,7 +5108,7 @@ var a, b;
     for (t = 0; t < l; t += 1) {
       if (("st" !== (o = (h = this.stylesList[t]).type) && "gs" !== o || 0 !== h.wi) && h.data._shouldRender && 0 !== h.coOp && 0 !== this.globalData.currentGlobalAlpha) {
         for (p.save(), a = h.elements, "st" === o || "gs" === o ? (m.strokeStyle = "st" === o ? h.co : h.grd, m.lineWidth = h.wi, m.lineCap = h.lc, m.lineJoin = h.lj, m.miterLimit = h.ml || 0) : m.fillStyle = "fl" === o ? h.co : h.grd, p.ctxOpacity(h.coOp), "st" !== o && "gs" !== o && m.beginPath(), p.ctxTransform(h.preTransforms.finalTransform.props), r = a.length, e = 0; e < r; e += 1) {
-          for ("st" !== o && "gs" !== o || (m.beginPath(), h.da && (m.setLineDash(h.da), m.lineDashOffset = h.do)), s = (n = a[e].trNodes).length, i = 0; i < s; i += 1) {
+          for ("st" !== o && "gs" !== o || (m.beginPath(), h.da && (m.setLineDash(h.da), m.lineDashOffset = h["do"])), s = (n = a[e].trNodes).length, i = 0; i < s; i += 1) {
             "m" == n[i].t ? m.moveTo(n[i].p[0], n[i].p[1]) : "c" == n[i].t ? m.bezierCurveTo(n[i].pts[0], n[i].pts[1], n[i].pts[2], n[i].pts[3], n[i].pts[4], n[i].pts[5]) : m.closePath();
           }
 
@@ -5206,7 +5206,7 @@ var a, b;
   }, CVShapeElement.prototype.renderStroke = function (t, e, r) {
     var i = e.style,
         s = e.d;
-    s && (s._mdf || this._isFirstFrame) && (i.da = s.dashArray, i.do = s.dashoffset[0]), (e.c._mdf || this._isFirstFrame) && (i.co = "rgb(" + bm_floor(e.c.v[0]) + "," + bm_floor(e.c.v[1]) + "," + bm_floor(e.c.v[2]) + ")"), (e.o._mdf || r._opMdf || this._isFirstFrame) && (i.coOp = e.o.v * r.opacity), (e.w._mdf || this._isFirstFrame) && (i.wi = e.w.v);
+    s && (s._mdf || this._isFirstFrame) && (i.da = s.dashArray, i["do"] = s.dashoffset[0]), (e.c._mdf || this._isFirstFrame) && (i.co = "rgb(" + bm_floor(e.c.v[0]) + "," + bm_floor(e.c.v[1]) + "," + bm_floor(e.c.v[2]) + ")"), (e.o._mdf || r._opMdf || this._isFirstFrame) && (i.coOp = e.o.v * r.opacity), (e.w._mdf || this._isFirstFrame) && (i.wi = e.w.v);
   }, CVShapeElement.prototype.destroy = function () {
     this.shapesData = null, this.globalData = null, this.canvasContext = null, this.stylesList.length = 0, this.itemsData.length = 0;
   }, extendPrototype([BaseElement, TransformElement, CVBaseElement, HierarchyElement, FrameElement, RenderableElement], CVSolidElement), CVSolidElement.prototype.initElement = SVGShapeElement.prototype.initElement, CVSolidElement.prototype.prepareFrame = IImageElement.prototype.prepareFrame, CVSolidElement.prototype.renderInnerContent = function () {
@@ -7637,4 +7637,4 @@ var a, b;
 /***/ })
 
 }]);
-//# sourceMappingURL=lottie.71335a7aeaf797fbb9f0.bundle.js.map
+//# sourceMappingURL=lottie.de02791e7aeee079eb86.bundle.js.map
