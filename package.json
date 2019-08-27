@@ -13,7 +13,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "dev": "webpack-dev-server --config webpack.dev.config.js",
-    "start": "Server running on localhost:8080",
+    "start": "node server.js",
     "heroku-postbuild": "webpack --config webpack.prod.config.js"
   },
   "repository": {
