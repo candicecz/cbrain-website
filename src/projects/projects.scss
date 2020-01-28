@@ -8,6 +8,7 @@
 
 $PROJECTS-CARD-TEXT: 7;
 $PROJECTS-TOGGLE-ICON: 0.5;
+$PROJECT-CONTENT-HEIGHT: 10;
 
 .projects {
   margin: $MARGIN / 1.5 + rem $PADDING + rem;
@@ -73,6 +74,7 @@ $PROJECTS-TOGGLE-ICON: 0.5;
       }
       .project-content {
         height: 0;
+        display: none;
         opacity: 0;
         transition: all 0.5s ease-in-out;
         .project-content-wrapper {
@@ -122,7 +124,6 @@ $PROJECTS-TOGGLE-ICON: 0.5;
           .project-content-wrapper {
             .project-content-text {
               padding: $PADDING + rem $PADDING * 2 + rem;
-
             }
           }
         }
@@ -240,8 +241,9 @@ $PROJECTS-TOGGLE-ICON: 0.5;
         }
       }
       .project-content {
+        display: block;
         opacity: 1;
-        transition: all 0.5s linear;
+        transition: opacity 0.5s linear;
         .project-content-wrapper {
           opacity: 1;
           transition: opacity 0.2s linear;

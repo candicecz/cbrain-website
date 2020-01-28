@@ -16,17 +16,24 @@
     />
   </head>
 
-  <body>
+  <body style="visibility: hidden">
     <%= require('html-loader!../partials/nav.html') %>
     <section class="projects">
       <div class="projects-section">
-        <div class="project" data-selected="false">
+        <div id="0" class="project" data-selected="false">
+          <!-- Project Card is the initial view -->
           <div class="project-card">
             <div class="project-card-logo">
-              <img class="project-card-img" alt="project-logo" />
+              <img
+                class="project-card-img"
+                alt="project-logo"
+                src="./assets/icons/icon-mcin.png"
+              />
             </div>
             <div class="project-card-text">
-              <p class="project-card-title"></p>
+              <p class="project-card-title">
+                McGill Centre for Integrative Neuroscience
+              </p>
               <img
                 class="project-card-toggle-icon"
                 src="./assets/icons/icon-show.png"
@@ -35,11 +42,22 @@
             </div>
             <div class="project-card-bar"></div>
           </div>
-          <div class="project-content">
+          <!-- This is loaded is the card is selected -->
+          <div
+            id="content-0"
+            class="project-content hidden"
+            data-selected="false"
+          >
             <div class="project-content-wrapper">
               <div class="project-content-text">
-                <a class="project-content-link" target="_blank">
-                  <div class="project-content-title"></div>
+                <a
+                  class="project-content-link"
+                  href="http://www.mcin.ca"
+                  target="_blank"
+                >
+                  <div class="project-content-title">
+                    McGill Centre for Integrative Neuroscience
+                  </div>
                   <div class="project-test"></div>
                   <img
                     class="link-img"
@@ -47,7 +65,439 @@
                     alt="external link icon"
                   />
                 </a>
-                <div class="project-content-description"></div>
+                <div class="project-content-description">
+                  A component of the Ludmer Centre for Neuroinformatics and
+                  Mental Health, the MCIN conducts computationally-intensive
+                  brain research using innovative mathematical and statistical
+                  approaches to integrate clinical, psychological or
+                  neuroimaging phenotypes with genotypic information. MCIN
+                  provides state of the art high performance computing
+                  technologies, research infrastructure, and training for
+                  researching questions in neurology, psychiatry, and
+                  developmental neurobiology.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="1" class="project" data-selected="false">
+          <!-- Project Card is the initial view -->
+          <div class="project-card">
+            <div class="project-card-logo">
+              <img
+                class="project-card-img"
+                alt="project-logo"
+                src="./assets/icons/icon-conp.png"
+              />
+            </div>
+            <div class="project-card-text">
+              <p class="project-card-title">
+                Canadian Open Neuroinformatics Platform
+              </p>
+              <img
+                class="project-card-toggle-icon"
+                src="./assets/icons/icon-show.png"
+                alt="toggle content icon"
+              />
+            </div>
+            <div class="project-card-bar"></div>
+          </div>
+          <!-- This is loaded is the card is selected -->
+          <div
+            id="content-1"
+            class="project-content hidden"
+            data-selected="false"
+          >
+            <div class="project-content-wrapper">
+              <div class="project-content-text">
+                <a
+                  class="project-content-link"
+                  href="http://www.conp.ca"
+                  target="_blank"
+                >
+                  <div class="project-content-title">
+                    Canadian Open Neuroscience Platform
+                  </div>
+                  <div class="project-test"></div>
+                  <img
+                    class="link-img"
+                    src="./assets/icons/icon-external-link.png"
+                    alt="external link icon"
+                  />
+                </a>
+                <div class="project-content-description">
+                  The Canadian Open Neuroscience Platform (CONP) aims to bring
+                  together many of the country’s leading scientists in basic and
+                  clinical neuroscience to form an interactive network of
+                  collaborations in brain research, interdisciplinary student
+                  training, international partnerships, clinical translation and
+                  open publishing. The platform will provide a unified interface
+                  to the research community and will propel Canadian
+                  neuroscience research into a new era of open neuroscience
+                  research with the sharing of both data and methods, the
+                  creation of large-scale databases, the development of
+                  standards for sharing, the facilitation of advanced analytic
+                  strategies, the open dissemination to the global community of
+                  both neuroscience data and methods, and the establishment of
+                  training programs for the next generation of computational
+                  neuroscience researchers.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="2" class="project" data-selected="false">
+          <!-- Project Card is the initial view -->
+          <div class="project-card">
+            <div class="project-card-logo">
+              <img
+                class="project-card-img"
+                alt="project-logo"
+                src="./assets/icons/icon-hbhl.jpg"
+              />
+            </div>
+            <div class="project-card-text">
+              <p class="project-card-title">
+                Healthy Brains for Healthy Lives
+              </p>
+              <img
+                class="project-card-toggle-icon"
+                src="./assets/icons/icon-show.png"
+                alt="toggle content icon"
+              />
+            </div>
+            <div class="project-card-bar"></div>
+          </div>
+          <!-- This is loaded is the card is selected -->
+          <div
+            id="content-2"
+            class="project-content hidden"
+            data-selected="false"
+          >
+            <div class="project-content-wrapper">
+              <div class="project-content-text">
+                <a
+                  class="project-content-link"
+                  href="https://www.mcgill.ca/hbhl"
+                  target="_blank"
+                >
+                  <div class="project-content-title">
+                    Healthy Brains for Healthy Lives
+                  </div>
+                  <div class="project-test"></div>
+                  <img
+                    class="link-img"
+                    src="./assets/icons/icon-external-link.png"
+                    alt="external link icon"
+                  />
+                </a>
+                <div class="project-content-description">
+                  The Healthy Brains for Healthy Lives (HBHL) initiative is a
+                  high profile, high priority multidisciplinary and
+                  cross-sectoral initiative located at McGill University made
+                  possible with support from the Canada First Research
+                  Excellence Fund (CFREF), Quebec’s Ministère de l'Économie, de
+                  la Science et de l'Innovation (MESI), and the Fonds de
+                  recherche du Quebec (FRQS, FRQSC and FRQNT). HBHL builds on
+                  McGill’s scientific excellence and global leadership in areas
+                  of neuroscience that hold the greatest promise for delivering
+                  implementable, clinically effective outcomes in brain and
+                  mental health. It aims to transform many brain disorders from
+                  terminal or life-long afflictions to treatable, even curable,
+                  conditions.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="3" class="project" data-selected="false">
+          <!-- Project Card is the initial view -->
+          <div class="project-card">
+            <div class="project-card-logo">
+              <img
+                class="project-card-img"
+                alt="project-logo"
+                src="./assets/icons/icon-compute-canada.png"
+              />
+            </div>
+            <div class="project-card-text">
+              <p class="project-card-title">
+                Compute Canada
+              </p>
+              <img
+                class="project-card-toggle-icon"
+                src="./assets/icons/icon-show.png"
+                alt="toggle content icon"
+              />
+            </div>
+            <div class="project-card-bar"></div>
+          </div>
+          <!-- This is loaded is the card is selected -->
+          <div
+            id="content-3"
+            class="project-content hidden"
+            data-selected="false"
+          >
+            <div class="project-content-wrapper">
+              <div class="project-content-text">
+                <a
+                  class="project-content-link"
+                  href="http://www.computecanada.ca/home"
+                  target="_blank"
+                >
+                  <div class="project-content-title">
+                    Compute Canada
+                  </div>
+                  <div class="project-test"></div>
+                  <img
+                    class="link-img"
+                    src="./assets/icons/icon-external-link.png"
+                    alt="external link icon"
+                  />
+                </a>
+                <div class="project-content-description">
+                  Compute Canada, in partnership with regional organizations
+                  ACENET, Calcul Québec, Compute Ontario and WestGrid, leads the
+                  acceleration of research and innovation by deploying
+                  state-of-the-art advanced research computing (ARC) systems,
+                  storage and software solutions. Together we provide essential
+                  ARC services and infrastructure for Canadian researchers and
+                  their collaborators in all academic and industrial sectors.
+                  Our world-class team of more than 200 experts employed by 37
+                  partner universities and research institutions across the
+                  country provide direct support to research teams. Compute
+                  Canada is a proud ambassador for Canadian excellence in
+                  advanced research computing nationally and internationally.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="4" class="project" data-selected="false">
+          <!-- Project Card is the initial view -->
+          <div class="project-card">
+            <div class="project-card-logo">
+              <img
+                class="project-card-img"
+                alt="project-logo"
+                src="./assets/icons/icon-loris.png"
+              />
+            </div>
+            <div class="project-card-text">
+              <p class="project-card-title">
+                LORIS
+              </p>
+              <img
+                class="project-card-toggle-icon"
+                src="./assets/icons/icon-show.png"
+                alt="toggle content icon"
+              />
+            </div>
+            <div class="project-card-bar"></div>
+          </div>
+          <!-- This is loaded is the card is selected -->
+          <div
+            id="content-4"
+            class="project-content hidden"
+            data-selected="false"
+          >
+            <div class="project-content-wrapper">
+              <div class="project-content-text">
+                <a
+                  class="project-content-link"
+                  href="http://www.loris.ca"
+                  target="_blank"
+                >
+                  <div class="project-content-title">
+                    LORIS
+                  </div>
+                  <div class="project-test"></div>
+                  <img
+                    class="link-img"
+                    src="./assets/icons/icon-external-link.png"
+                    alt="external link icon"
+                  />
+                </a>
+                <div class="project-content-description">
+                  The Longitudinal Online Research and Imaging System (LORIS) is
+                  a web-based data and project management software for
+                  neuroimaging research studies. It is an open source framework
+                  for storing and processing behavioural, clinical, neuroimaging
+                  and genetic data. LORIS also makes it easy to manage large
+                  datasets acquired over time in a longitudinal study, or at
+                  different locations in a large multi-site study.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="5" class="project" data-selected="false">
+          <!-- Project Card is the initial view -->
+          <div class="project-card">
+            <div class="project-card-logo">
+              <img
+                class="project-card-img"
+                alt="project-logo"
+                src="./assets/icons/icon-boutiques.png"
+              />
+            </div>
+            <div class="project-card-text">
+              <p class="project-card-title">
+                Boutiques
+              </p>
+              <img
+                class="project-card-toggle-icon"
+                src="./assets/icons/icon-show.png"
+                alt="toggle content icon"
+              />
+            </div>
+            <div class="project-card-bar"></div>
+          </div>
+          <!-- This is loaded is the card is selected -->
+          <div
+            id="content-5"
+            class="project-content hidden"
+            data-selected="false"
+          >
+            <div class="project-content-wrapper">
+              <div class="project-content-text">
+                <a
+                  class="project-content-link"
+                  href="https://github.com/boutiques"
+                  target="_blank"
+                >
+                  <div class="project-content-title">
+                    Boutiques
+                  </div>
+                  <div class="project-test"></div>
+                  <img
+                    class="link-img"
+                    src="./assets/icons/icon-external-link.png"
+                    alt="external link icon"
+                  />
+                </a>
+                <div class="project-content-description">
+                  Boutiques is a tool to automatically publish, integrate, and
+                  execute applications across computational platforms. Boutiques
+                  applications are summarized in a simple yet rich JSON
+                  description, and enable the simulation, validation,
+                  evaluation, and application-specific monitoring of
+                  command-line tools.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="6" class="project" data-selected="false">
+          <!-- Project Card is the initial view -->
+          <div class="project-card">
+            <div class="project-card-logo">
+              <img
+                class="project-card-img"
+                alt="project-logo"
+                src="./assets/icons/icon-carmin.png"
+              />
+            </div>
+            <div class="project-card-text">
+              <p class="project-card-title">
+                CARMIN
+              </p>
+              <img
+                class="project-card-toggle-icon"
+                src="./assets/icons/icon-show.png"
+                alt="toggle content icon"
+              />
+            </div>
+            <div class="project-card-bar"></div>
+          </div>
+          <!-- This is loaded is the card is selected -->
+          <div
+            id="content-6"
+            class="project-content hidden"
+            data-selected="false"
+          >
+            <div class="project-content-wrapper">
+              <div class="project-content-text">
+                <a
+                  class="project-content-link"
+                  href="https://github.com/CARMIN-org/CARMIN-API"
+                  target="_blank"
+                >
+                  <div class="project-content-title">
+                    CARMIN
+                  </div>
+                  <div class="project-test"></div>
+                  <img
+                    class="link-img"
+                    src="./assets/icons/icon-external-link.png"
+                    alt="external link icon"
+                  />
+                </a>
+                <div class="project-content-description">
+                  CARMIN is a common web RESTful API for pipeline execution on
+                  remote computational resources. It presents a common means for
+                  software to connect to backend services for launching,
+                  tracking, and collecting data from pipelines that need large
+                  scale resources to be performed.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="7" class="project" data-selected="false">
+          <!-- Project Card is the initial view -->
+          <div class="project-card">
+            <div class="project-card-logo">
+              <img
+                class="project-card-img"
+                alt="project-logo"
+                src="./assets/icons/icon-clowdr.png"
+              />
+            </div>
+            <div class="project-card-text">
+              <p class="project-card-title">
+                Clowdr
+              </p>
+              <img
+                class="project-card-toggle-icon"
+                src="./assets/icons/icon-show.png"
+                alt="toggle content icon"
+              />
+            </div>
+            <div class="project-card-bar"></div>
+          </div>
+          <!-- This is loaded is the card is selected -->
+          <div
+            id="content-7"
+            class="project-content hidden"
+            data-selected="false"
+          >
+            <div class="project-content-wrapper">
+              <div class="project-content-text">
+                <a
+                  class="project-content-link"
+                  href="https://github.com/clowdr/clowdr"
+                  target="_blank"
+                >
+                  <div class="project-content-title">
+                    Clowdr
+                  </div>
+                  <div class="project-test"></div>
+                  <img
+                    class="link-img"
+                    src="./assets/icons/icon-external-link.png"
+                    alt="external link icon"
+                  />
+                </a>
+                <div class="project-content-description">
+                  Clowdr can be thought of as a cloud execution utility for
+                  Boutiques, the JSON-based descriptive command-line framework.
+                  As Boutiques and the Boutiques tools allow the encapsulation,
+                  validation, evaluation, and deployment of command-line
+                  routines, Clowdr inherits and extends this functionality to
+                  remote datasets and computational resources, while collecting
+                  detailed provenance information across executions.
+                </div>
               </div>
             </div>
           </div>
