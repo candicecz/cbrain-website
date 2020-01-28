@@ -164,7 +164,7 @@ $ABOUT-MODAL-EXTERNAL: 1;
         margin-bottom: $PADDING-TABLET + rem;
         .team-description {
           padding: $PADDING / 2 + rem;
-          padding-bottom:0;
+          padding-bottom: 0;
         }
       }
       .team-grid {
@@ -201,7 +201,7 @@ $ABOUT-MODAL-EXTERNAL: 1;
           flex: 0 1 100%;
           padding: $MARGIN-MOBILE + rem;
         }
-        .past-contributors li{
+        .past-contributors li {
           text-align: center;
           flex: 1 1 100%;
         }
@@ -341,7 +341,6 @@ body[data-modal="true"] {
               display: flex;
               align-items: center;
               flex-direction: column;
-              justify-content: center;
               .employee-bio {
                 @extend .text;
                 display: flex;
