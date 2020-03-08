@@ -1,17 +1,20 @@
-# cbrain-website
+## CBRAIN | Website
 
-### Website for the CBRAIN service
+Website for the CBRAIN service.
 
-#### For local development:
+### Setup Guide
 
-1. `npm install`
-2. `npm run dev`
+**Install dependencies.**
 
-##### To update:
+From the root directory, run `npm install` to install all dependencies.
 
-1. The first time:
-   - `$ heroku login`
-   - `$ heroku git:clone -a cbrain-website`
-   - `$ cd cbrain-website`
-2. Make desired changes and `npm run build`
-3. `git add .`, `git commit`, `git push heroku master`
+Run `npm run dev` to run in dev mode.
+
+Run `npm run build` to build.
+
+### Design Mockups
+
+[![CBRAIN](designs/01.jpg)](http://www.cbrain.ca)
+[![CBRAIN](designs/02.jpg)](http://www.cbrain.ca)
+[![CBRAIN](designs/03.jpg)](http://www.cbrain.ca)
+[![CBRAIN](designs/04.jpg)](http://www.cbrain.ca)
